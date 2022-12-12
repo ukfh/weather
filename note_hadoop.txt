@@ -1,0 +1,9 @@
+
+
+https://www.programmersought.com/article/70041349736/
+https://sparkbyexamples.com/apache-hive/connect-to-hive-using-beeline/
+
+ hive --service hiveserver2
+
+
+beeline -u jdbc:hive2://localhost:10000 uh

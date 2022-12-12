@@ -1,0 +1,11 @@
+name,unit,description,type
+G,mph,"Wind Gust",double
+T,C,"Temperature",double
+V,m,"Visibility",double
+D,compass,"Wind Direction",string
+S,mph,"Wind Speed",double
+W,,"Weather Type",int
+P,hpa,"Pressure",double
+Pt,Pa,"Pressure Tendency",string
+Dp,C,"Dew Point",double
+H,%,"Rel. Humidity",double
