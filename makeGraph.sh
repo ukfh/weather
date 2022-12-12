@@ -83,7 +83,7 @@ cd ..
 git add R/benson.png
 DATE=`date +%Y-%m-%d-%H-%M`
 git commit -m "plot update on $DATE"
-git push origin master
+git push origin main
 
 
 
