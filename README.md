@@ -34,7 +34,7 @@ The script [`pipeline.sh`](pipeline.sh) puts the data regularly into HDFS and HI
 
 ## A plot of the latest data  
 
-To keep an eye on the progress of the processing pipeline we plot the last 7 days of weather for the stats in Benson with the R script [`makeGraph.R`](R/makeGraph.R). It uses the line `options(bitmapType='cairo')` to be able to plot in the background. The data has been coloured by the time of the day (period).
+To keep an eye on the progress of the processing pipeline we plot the last 7 days of weather for the stats in Odiham with the R script [`makeGraph.R`](R/makeGraph.R). It uses the line `options(bitmapType='cairo')` to be able to plot in the background. The data has been coloured by the time of the day (period).
 ![The UK](R/benson.png?raw=true "The UK")
 
 
