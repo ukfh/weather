@@ -37,33 +37,41 @@ plotData['value_w'] = pd.to_numeric(plotData['value_w'], errors='coerce')
 #plt.show()
 
 endTime = str(plotData['datetime_'].max())
+startTime = str(plotData['datetime_'].min())
 #print(endTime)
-title = 'Latest observations for Odiham ending ' + endTime
+title = 'Latest observations for Odiham'
 #print(title)
 st.title(title, anchor=None)
-st.text('This displays the weather data for the last 7 days in Odiham.')
+st.write('This displays the weather data for the last 7 days in Odiham between ' + startTime + ' and ' + endTime + '.')
+
+
+
 
 st.header('Temperature')
 fig = px.line(
     plotData,
     x='datetime_', y='value_t',
- #   size="pop",
- #   color="continent",
-  #  hover_name="country",
-  #  log_x=True,
-  #  size_max=60,
-)
+    #   size="pop",
+    #   color="continent",
+    #  hover_name="country",
+    #  log_x=True,
+    #  size_max=60,
+    labels={
+                     "datetime_": "Date",
+                     "value_t": "C"
+                 }
+ )
 
 tab1, tab2 = st.tabs(["Streamlit theme (default)", "Plotly native theme"])
 with tab1:
-    # Use the Streamlit theme.
-    # This is the default. So you can also omit the theme argument.
-    st.plotly_chart(fig, theme="streamlit", use_container_width=True)
+       # Use the Streamlit theme.
+       # This is the default. So you can also omit the theme argument.
+       st.plotly_chart(fig, theme="streamlit", use_container_width=True)
 with tab2:
-    # Use the native Plotly theme.
-    st.plotly_chart(fig, theme=None, use_container_width=True)
+       # Use the native Plotly theme.
+       st.plotly_chart(fig, theme=None, use_container_width=True)
 
-st.header('Humidity')
+st.header('Relative Humidity')
 fig = px.line(
     plotData,
     x='datetime_', y='value_h',
@@ -72,6 +80,10 @@ fig = px.line(
   #  hover_name="country",
   #  log_x=True,
   #  size_max=60,
+    labels={
+        "datetime_": "Date",
+        "value_h": "%"
+    }
 )
 
 tab1, tab2 = st.tabs(["Streamlit theme (default)", "Plotly native theme"])
@@ -92,6 +104,10 @@ fig = px.line(
   #  hover_name="country",
   #  log_x=True,
   #  size_max=60,
+    labels={
+        "datetime_": "Date",
+        "value_p": "mBar"
+    }
 )
 
 tab1, tab2 = st.tabs(["Streamlit theme (default)", "Plotly native theme"])
@@ -112,6 +128,10 @@ fig = px.line(
   #  hover_name="country",
   #  log_x=True,
   #  size_max=60,
+    labels={
+        "datetime_": "Date",
+        "value_v": "m"
+    }
 )
 
 tab1, tab2 = st.tabs(["Streamlit theme (default)", "Plotly native theme"])
@@ -132,6 +152,10 @@ fig = px.line(
   #  hover_name="country",
   #  log_x=True,
   #  size_max=60,
+    labels={
+        "datetime_": "Date",
+        "value_w": "speed"
+    }
 )
 
 tab1, tab2 = st.tabs(["Streamlit theme (default)", "Plotly native theme"])
@@ -152,6 +176,10 @@ fig = px.line(
   #  hover_name="country",
   #  log_x=True,
   #  size_max=60,
+    labels={
+        "datetime_": "Date",
+        "value_dp": "C"
+    }
 )
 
 tab1, tab2 = st.tabs(["Streamlit theme (default)", "Plotly native theme"])
