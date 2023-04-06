@@ -5,7 +5,7 @@ import numpy as np
 
 
 
-df = pd.read_csv('../R/latest_weather.csv'
+df = pd.read_csv('./latest_weather.csv'
                  , sep='\t'
                  , lineterminator='\n'
                  , header=None
