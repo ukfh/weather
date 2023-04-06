@@ -1,6 +1,7 @@
 import pandas as pd
 #import matplotlib.pyplot as plt
 import streamlit as st
+import plotly.express as px
 import numpy as np
 
 
@@ -43,20 +44,126 @@ st.title(title, anchor=None)
 st.text('This displays the weather data for the last 7 days in Odiham.')
 
 st.header('Temperature')
-st.line_chart(plotData,  x = 'datetime_', y = 'value_t')
+fig = px.line(
+    plotData,
+    x='datetime_', y='value_t',
+ #   size="pop",
+ #   color="continent",
+  #  hover_name="country",
+  #  log_x=True,
+  #  size_max=60,
+)
+
+tab1, tab2 = st.tabs(["Streamlit theme (default)", "Plotly native theme"])
+with tab1:
+    # Use the Streamlit theme.
+    # This is the default. So you can also omit the theme argument.
+    st.plotly_chart(fig, theme="streamlit", use_container_width=True)
+with tab2:
+    # Use the native Plotly theme.
+    st.plotly_chart(fig, theme=None, use_container_width=True)
 
 st.header('Humidity')
-st.line_chart(plotData,  x = 'datetime_', y = 'value_h')
+fig = px.line(
+    plotData,
+    x='datetime_', y='value_h',
+ #   size="pop",
+ #   color="continent",
+  #  hover_name="country",
+  #  log_x=True,
+  #  size_max=60,
+)
+
+tab1, tab2 = st.tabs(["Streamlit theme (default)", "Plotly native theme"])
+with tab1:
+    # Use the Streamlit theme.
+    # This is the default. So you can also omit the theme argument.
+    st.plotly_chart(fig, theme="streamlit", use_container_width=True)
+with tab2:
+    # Use the native Plotly theme.
+    st.plotly_chart(fig, theme=None, use_container_width=True)
 
 st.header('Pressure')
-st.line_chart(plotData,  x = 'datetime_', y = 'value_p')
+fig = px.line(
+    plotData,
+    x='datetime_', y='value_p',
+ #   size="pop",
+ #   color="continent",
+  #  hover_name="country",
+  #  log_x=True,
+  #  size_max=60,
+)
+
+tab1, tab2 = st.tabs(["Streamlit theme (default)", "Plotly native theme"])
+with tab1:
+    # Use the Streamlit theme.
+    # This is the default. So you can also omit the theme argument.
+    st.plotly_chart(fig, theme="streamlit", use_container_width=True)
+with tab2:
+    # Use the native Plotly theme.
+    st.plotly_chart(fig, theme=None, use_container_width=True)
 
 st.header('Visibility')
-st.line_chart(plotData,  x = 'datetime_', y = 'value_v')
+fig = px.line(
+    plotData,
+    x='datetime_', y='value_v',
+ #   size="pop",
+ #   color="continent",
+  #  hover_name="country",
+  #  log_x=True,
+  #  size_max=60,
+)
+
+tab1, tab2 = st.tabs(["Streamlit theme (default)", "Plotly native theme"])
+with tab1:
+    # Use the Streamlit theme.
+    # This is the default. So you can also omit the theme argument.
+    st.plotly_chart(fig, theme="streamlit", use_container_width=True)
+with tab2:
+    # Use the native Plotly theme.
+    st.plotly_chart(fig, theme=None, use_container_width=True)
 
 st.header('Wind speed')
-st.line_chart(plotData,  x = 'datetime_', y = 'value_w')
+fig = px.line(
+    plotData,
+    x='datetime_', y='value_w',
+ #   size="pop",
+ #   color="continent",
+  #  hover_name="country",
+  #  log_x=True,
+  #  size_max=60,
+)
+
+tab1, tab2 = st.tabs(["Streamlit theme (default)", "Plotly native theme"])
+with tab1:
+    # Use the Streamlit theme.
+    # This is the default. So you can also omit the theme argument.
+    st.plotly_chart(fig, theme="streamlit", use_container_width=True)
+with tab2:
+    # Use the native Plotly theme.
+    st.plotly_chart(fig, theme=None, use_container_width=True)
 
 st.header('Dew Point')
-st.line_chart(plotData,  x = 'datetime_', y = 'value_dp')
+fig = px.line(
+    plotData,
+    x='datetime_', y='value_dp',
+ #   size="pop",
+ #   color="continent",
+  #  hover_name="country",
+  #  log_x=True,
+  #  size_max=60,
+)
+
+tab1, tab2 = st.tabs(["Streamlit theme (default)", "Plotly native theme"])
+with tab1:
+    # Use the Streamlit theme.
+    # This is the default. So you can also omit the theme argument.
+    st.plotly_chart(fig, theme="streamlit", use_container_width=True)
+with tab2:
+    # Use the native Plotly theme.
+    st.plotly_chart(fig, theme=None, use_container_width=True)
+
+
+
+
 
