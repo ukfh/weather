@@ -76,11 +76,11 @@ hive --hivevar WHERE="$where" -f query_odiham.sql > R/latest_weather.csv
 
 cd R
 
-/usr/local/bin/Rscript makeGraph.R
+#/usr/local/bin/Rscript makeGraph.R
 
 cd ..
 
-git add R/benson.png
+#git add R/benson.png
 git add R/latest_weather.csv
 DATE=`date +%Y-%m-%d-%H-%M`
 git commit -m "plot update on $DATE"
