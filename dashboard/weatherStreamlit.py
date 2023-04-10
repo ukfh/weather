@@ -215,6 +215,33 @@ with tab2:
     st.plotly_chart(fig, theme=None, use_container_width=True)
 
 
+# dew point ######################################################################
+
+st.header('Temperature against humidity')
+fig = px.scatter(
+    plotData,
+    x='value_t', y='value_h',
+ #   size="pop",
+    color="value_p",
+    hover_name="datetime_",
+  #  log_x=True,
+  #  size_max=60,
+    labels={
+        "datetime_": "Date",
+        "value_t": "C",
+        "value_h": "Humidity",
+        "value_p": "Pressure"
+    }
+)
+
+tab1, tab2 = st.tabs(["Streamlit theme (default)", "Plotly native theme"])
+with tab1:
+    # Use the Streamlit theme.
+    # This is the default. So you can also omit the theme argument.
+    st.plotly_chart(fig, theme="streamlit", use_container_width=True)
+with tab2:
+    # Use the native Plotly theme.
+    st.plotly_chart(fig, theme=None, use_container_width=True)
 
 
 
